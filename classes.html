@@ -10,13 +10,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <!--End of Bootstrap stuff-->
         <link rel="stylesheet" type="text/css" href="css/main.css" /> <!-- Personnal CSS stylesheet -->
-        <style>
-            /* Make the image fully responsive */
-            .carousel-inner img {
-                width: 100%;
-                height: 100%;
-            }
-        </style>
         <title>VIAFIT</title>
     </head>
     <body>
@@ -72,6 +65,12 @@
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente aspernatur cupiditate, excepturi at amet, inventore suscipit voluptatem impedit, nihil natus dolorem esse consequatur soluta dolore incidunt quas. Nobis, nulla, tempora.
                     </p>
+                    <!-- Button to Open the Modal -->
+                    <div class="text-center">
+                        <button type="button" class="btn btn-secondary " data-toggle="modal" data-target="#myModal">
+                            Available Material
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -89,7 +88,35 @@
             </div>
         </div>
 
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Available Material</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
 
+                    <div class="modal-body">
+                        <div class="container">
+                            <h2>Barbells</h2>
+                            <div class="col-6 offset-3">
+                            <img src="images/Barbells.png" alt="bar" class="img-fluid"> 
+                            </div>     
+
+                            <h2>Ball</h2>
+                            <div class="col-6 offset-3">
+                            <img src="images/boule.jpg" alt="ball" class="img-fluid">
+                            </div>           
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--End Modal-->
 
         <footer>
             <div class="container-fluid">
