@@ -59,5 +59,8 @@ footer {
 .news img{
     width:200px;
 }
-
+.padding-1{
+    padding-right:1px;
+    padding-left:1px;
+}
 /*--------------------------------------------------------------------*/
