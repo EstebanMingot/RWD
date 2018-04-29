@@ -4,6 +4,14 @@ body{
 .jumbotron {
     margin-top: 50px;
 }
+.banner{
+    background-image: url("/images/banner.jpg");
+    background-size: cover;
+}
+.banner2 {
+    background-image: url("/images/banner3.jpg");
+    background-size: cover;
+}
 .card{
     width:350px;
 }
@@ -26,11 +34,15 @@ a img{
 
 .fixed-top-2{
     margin-top: 51px;
-    
+
 }
 .jump-down{
     margin-top: 101px;
 }
-
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
 
 /*--------------------------------------------------------------------*/
