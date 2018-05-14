@@ -1,6 +1,6 @@
 <!--         RWD assignment 3
 Carton Samuel, Ponthoreau Mathieu, Mingot Estéban
-                2017-2018                     -->
+2017-2018                     -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,6 +11,17 @@ Carton Samuel, Ponthoreau Mathieu, Mingot Estéban
         <!--End of Bootstrap stuff-->
         <link rel="stylesheet" type="text/css" href="css/main.css" /> <!-- Personnal CSS stylesheet -->
         <title>VIAFIT</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#hide").click(function(){
+                    $(".news").hide(1000);
+                });
+                $("#show").click(function(){
+                    $(".news").show(1000);
+                });
+            });
+        </script>
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
@@ -75,11 +86,14 @@ Carton Samuel, Ponthoreau Mathieu, Mingot Estéban
                     <!-- News -->
                     <div class="col-12">
                         <p>At VIAFIT, we provide the tools to help you reach your health and fitness goals. As a 5 star fitness company, established in 2002 with our very first location, Sylmar Super Center, Denmark Fitness stands alone in bringing you the utmost in a designer workout facility. Our focus is providing our members with affordable memberships, the best equipment, and a wide range of amenities while maintaining a family friendly facility. Come in and DANMARKS STØRSTE FITNESSCENTER FOR ALLE.</p>
+
                     </div>
                 </div>
                 <!-- Right Column (Articles) -->
                 <div class="col-sm-12 col-md-6">
                     <h4>Articles</h4>
+                    <button id="hide">Hide</button>
+                    <button id="show">Show</button>
                     <div class="row">
                         <div class="col-sm-6 text-center news">
                             <a href="classes.html#weightLifting"><img class="img-fluid rounded shadow" src="images/1.jpeg" alt="Bench" title="Bench"/></a>
