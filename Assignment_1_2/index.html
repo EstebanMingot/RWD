@@ -15,10 +15,7 @@ Carton Samuel, Ponthoreau Mathieu, Mingot Estéban
         <script>
             $(document).ready(function(){
                 $("#hide").click(function(){
-                    $(".news").hide(1000);
-                });
-                $("#show").click(function(){
-                    $(".news").show(1000);
+                    $(".news").toggle(1000);
                 });
             });
         </script>
@@ -93,7 +90,6 @@ Carton Samuel, Ponthoreau Mathieu, Mingot Estéban
                 <div class="col-sm-12 col-md-6">
                     <h4>Articles</h4>
                     <button id="hide">Hide</button>
-                    <button id="show">Show</button>
                     <div class="row">
                         <div class="col-sm-6 text-center news">
                             <a href="classes.html#weightLifting"><img class="img-fluid rounded shadow" src="images/1.jpeg" alt="Bench" title="Bench"/></a>
