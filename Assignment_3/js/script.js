@@ -1,7 +1,7 @@
 function animatethis(targetElement,img,img2) {
     var position = targetElement.position();
-    var movementX = Math.random() * $(document).width() - $(targetElement).width();
-    var movementY = Math.random() * $(document).height() - $(targetElement).height();
+    var movementX = Math.random() * ($(document).width() - $(targetElement).width() );
+    var movementY = Math.random() * ($(document).height() - $(targetElement).height());
     
     if( position.left < movementX){
         $(targetElement).attr('src','images/'+img );
