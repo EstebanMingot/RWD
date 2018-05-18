@@ -58,28 +58,31 @@ $('#fish1Id').dblclick(function()
 /* bubbles part beginning*/
 console.log('bubbles working!');
 
-var bubbleTable = document.getElementsByClassName("bubbleClass");
+var bubbleTable = document.getElementsByClassName("bubbleClass"); //get all the bubbles and put them in an array
 var i = 0;
 
 linkStart();
 
-
+// move the bubble to the top
 function upYouGo(elementId){
     var speed = $(document).height()/0.2;
     $(elementId).animate({top:"-100px"},speed,"linear");
 }
 
+// teleport the bubble bellow the screen
 function downYouSpawn(elementId){
     var startingPoint = ($(document).height() + 100);
     $(elementId).animate({top: startingPoint},0);
     $(elementId).show();
 }
 
+// chose a random X coordonate and teleport the bubble to it
 function altenativeStart(elementId){
     var randX = Math.random() * ($(document).width() - 100);
     $(elementId).animate({left:randX},0);
 }
 
+// concatenate the fonctions above and repeat
 function bubblesFlow(bubbleNum){
     downYouSpawn(bubbleTable[bubbleNum]);
     altenativeStart(bubbleTable[bubbleNum]);
@@ -89,6 +92,7 @@ function bubblesFlow(bubbleNum){
     },2500);
 }
 
+// start the bubbles with a delay between them
 function notAllAtOnce(){
     if(i < bubbleTable.length){
         bubblesFlow(i);
@@ -97,6 +101,7 @@ function notAllAtOnce(){
     i++;
 }
 
+// hide the bubble and start the machine
 function linkStart(){
     for(i = 0; i < bubbleTable.length; i++){
         downYouSpawn(bubbleTable[i]);
@@ -105,6 +110,7 @@ function linkStart(){
     notAllAtOnce();
 }
 
+// pops the bubbles
 $(".bubbleClass").mousedown(function(){
     $(this).hide();
     console.log('hit');
