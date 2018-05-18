@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> c5fcb2cf2bbe2c2e26ebb84e12e9ad42e697e663
 function animatethis(targetElement,img,img2) {
     
     var movement = Math.floor((Math.random() * 600) - 300);
@@ -54,7 +58,11 @@ $('#fish1Id').dblclick(function()
      
                     $("#fish1Id").animate({ top: MT, left: ML},1000);
                 } );  
+<<<<<<< HEAD
+=======
+=======
 
+>>>>>>> c5fcb2cf2bbe2c2e26ebb84e12e9ad42e697e663
 /* bubbles part beginning*/
 console.log('bubbles working!');
 
@@ -117,4 +125,8 @@ $(".bubbleClass").mousedown(function(){
     $(this).stop(true);
 })
 /* bubble part end */
+<<<<<<< HEAD
+>>>>>>> 8d6686a2fc6c6cec29618dc0136821510370c430
+=======
 
+>>>>>>> c5fcb2cf2bbe2c2e26ebb84e12e9ad42e697e663
