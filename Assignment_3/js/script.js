@@ -1,3 +1,4 @@
+
 function animatethis(targetElement,img,img2) {
     var position = targetElement.position();
     var movementX = Math.random() * $(document).width() - $(targetElement).width();
@@ -22,6 +23,18 @@ function animatethis(targetElement,img,img2) {
 animatethis( $('#fish1Id') , 'fish1.png ' , 'fish1-2.png' ); 
 animatethis( $('#fish2Id') , 'fish2.png ' , 'fish2-2.png' );
 
+$('#fish2Id').mouseenter(function() 
+                        {     
+                            $("#fish2Id").stop(true);
+                            var Wi = $( window ).width();
+                            var He = $( window ).height();
+                            
+                            var ML = Math.floor((Math.random() * Wi) - 0);
+                            var MT = Math.floor((Math.random() * He) - 0);
+    
+                            $("#fish2Id").animate({ top: MT, left: ML},1000);
+                            animatethis( $('#fish2Id') , 'fish2.png ' , 'fish2-2.png' );
+                        }) ;
 
 $('#fish1Id').dblclick(function() 
                        {       
@@ -56,12 +69,13 @@ function downYouSpawn(elementId){
     var startingPoint = ($(document).height() + 100);
     $(elementId).animate({top: startingPoint},0);
     $(elementId).show();
+    var randX = Math.random() * ($(document).width() - 100);
+    $(elementId).animate({left:randX},0);
 }
 
 // chose a random X coordonate and teleport the bubble to it
 function altenativeStart(elementId){
-    var randX = Math.random() * ($(document).width() - 100);
-    $(elementId).animate({left:randX},0);
+    
 }
 
 // concatenate the fonctions above and repeat
