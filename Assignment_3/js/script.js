@@ -25,18 +25,35 @@ animatethis( $('#fish2Id') , 'fish2.png ' , 'fish2-2.png' );
 
 
 $('#fish1Id').dblclick(function() 
-                       {       
-    $('#fish1Id').animate({  "width": 350, "height": 350 }, 750);
-    $('#fish1Id').animate({  "width": 250, "height": 250 }, 750);
+                       {   
+    $('#fish1Id').stop(true);
+    $('#fish1Id').animate({  "width": 350, "height": 350 }, 750,'swing');
+    $('#fish1Id').animate({  "width": 250, "height": 250 }, 750,'swing');
+    animatethis( $('#fish1Id') , 'fish1.png ' , 'fish1-2.png' ); 
 }) ;
 
 $(window).click(function()
                 { 
+    $('#fish1Id').stop(true);
     var ML = event.pageX - 125;
     var MT = event.pageY - 125;
 
-    $("#fish1Id").animate({ top: MT, left: ML},1000);
-} );  
+    $("#fish1Id").animate({ top: MT, left: ML},2000,'swing');
+    animatethis( $('#fish1Id') , 'fish1.png ' , 'fish1-2.png' ); 
+} );
+
+$('#fish2Id').mouseenter(function() 
+                         {     
+    $("#fish2Id").stop(true);
+    var Wi = $( window ).width();
+    var He = $( window ).height();
+
+    var ML = Math.floor((Math.random() * Wi) - 0);
+    var MT = Math.floor((Math.random() * He) - 0);
+
+    $("#fish2Id").animate({ top: MT, left: ML},1000 ,'swing');
+    animatethis( $('#fish2Id') , 'fish2.png ' , 'fish2-2.png' );
+}) ;
 
 /* bubbles part beginning*/
 console.log('bubbles working!');
