@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> c5fcb2cf2bbe2c2e26ebb84e12e9ad42e697e663
 function animatethis(targetElement,img,img2) {
     
     var movement = Math.floor((Math.random() * 600) - 300);
@@ -44,6 +40,18 @@ function animatethis(targetElement,img,img2) {
 animatethis( $('#fish1Id') , 'fish1.png ' , 'fish1-2.png' ); 
 animatethis( $('#fish2Id') , 'fish2.png ' , 'fish2-2.png' );
 
+$('#fish2Id').mouseenter(function() 
+                        {     
+                            $("#fish2Id").stop(true);
+                            var Wi = $( window ).width();
+                            var He = $( window ).height();
+                            
+                            var ML = Math.floor((Math.random() * Wi) - 0);
+                            var MT = Math.floor((Math.random() * He) - 0);
+    
+                            $("#fish2Id").animate({ top: MT, left: ML},1000);
+                            animatethis( $('#fish2Id') , 'fish2.png ' , 'fish2-2.png' );
+                        }) ;
 
 $('#fish1Id').dblclick(function() 
                         {       
@@ -58,11 +66,7 @@ $('#fish1Id').dblclick(function()
      
                     $("#fish1Id").animate({ top: MT, left: ML},1000);
                 } );  
-<<<<<<< HEAD
-=======
-=======
 
->>>>>>> c5fcb2cf2bbe2c2e26ebb84e12e9ad42e697e663
 /* bubbles part beginning*/
 console.log('bubbles working!');
 
@@ -81,11 +85,12 @@ function downYouSpawn(elementId){
     var startingPoint = ($(document).height() + 100);
     $(elementId).animate({top: startingPoint},0);
     $(elementId).show();
+    var randX = Math.random() * ($(document).width() - 100);
+    $(elementId).animate({left:randX},0);
 }
 
 function altenativeStart(elementId){
-    var randX = Math.random() * ($(document).width() - 100);
-    $(elementId).animate({left:randX},0);
+    
 }
 
 function bubblesFlow(bubbleNum){
@@ -119,8 +124,4 @@ $(".bubbleClass").mousedown(function(){
     $(this).stop(true);
 })
 /* bubble part end */
-<<<<<<< HEAD
->>>>>>> 8d6686a2fc6c6cec29618dc0136821510370c430
-=======
 
->>>>>>> c5fcb2cf2bbe2c2e26ebb84e12e9ad42e697e663
