@@ -9,12 +9,13 @@ function animatethis(targetElement,img,img2) {
     else{
         $(targetElement).attr('src','images/'+img2 );
     }
-    
-    $(targetElement).animate({left:movementX,top:movementY},2000);
+    var distance = Math.sqrt(Math.abs(position.left - movementX)^2+Math.abs(position.top - movementY)^2)
+    var duration = distance / 0.01;
+    $(targetElement).animate({left:movementX,top:movementY},duration);
     
     setTimeout(function(){
         animatethis(targetElement,img,img2);
-    },2000);
+    },duration);
 }
 
 
