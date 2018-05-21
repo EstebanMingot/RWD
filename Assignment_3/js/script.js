@@ -16,7 +16,7 @@ function animatethis(targetElement,img,img2) {
     //Fish move speed
     var distance = Math.sqrt(Math.abs(position.left - movementX)^2+Math.abs(position.top - movementY)^2)
     var duration = distance / 0.01;
-    
+
     $(targetElement).animate({left:movementX,top:movementY},duration);
 
     setTimeout(function(){
@@ -51,13 +51,10 @@ $(window).click(function()
 $('#fish2Id').mouseenter(function() 
                          {     
     $("#fish2Id").stop(true);
-    var Wi = $( window ).width();
-    var He = $( window ).height();
+    var movementX = Math.random() * ($(document).width() - $("#fish2Id").width() );
+    var movementY = Math.random() * ($(document).height() - $("#fish2Id").height());
 
-    var ML = Math.floor((Math.random() * Wi) - 0);
-    var MT = Math.floor((Math.random() * He) - 0);
-
-    $("#fish2Id").animate({ top: MT, left: ML},1000 ,'swing');
+    $("#fish2Id").animate({ top: movementY, left: movementX},500 ,'swing');
     animatethis( $('#fish2Id') , 'fish2.png ' , 'fish2-2.png' );
 }) ;
 
