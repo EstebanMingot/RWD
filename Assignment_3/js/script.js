@@ -1,29 +1,33 @@
+/*           RWD assignment 3
+Carton Samuel, Ponthoreau Mathieu, Mingot Estéban
+                2017-2018                     */
+//Random Fish movement
 function animatethis(targetElement,img,img2) {
     var position = targetElement.position();
     var movementX = Math.random() * ($(document).width() - $(targetElement).width() );
     var movementY = Math.random() * ($(document).height() - $(targetElement).height());
-    
+    //Fish direction
     if( position.left < movementX){
         $(targetElement).attr('src','images/'+img );
     }
     else{
         $(targetElement).attr('src','images/'+img2 );
     }
+    //Fish move speed
     var distance = Math.sqrt(Math.abs(position.left - movementX)^2+Math.abs(position.top - movementY)^2)
     var duration = distance / 0.01;
-    $(targetElement).animate({left:movementX,top:movementY},duration);
     
+    $(targetElement).animate({left:movementX,top:movementY},duration);
+
     setTimeout(function(){
         animatethis(targetElement,img,img2);
     },duration);
 }
 
-
-
 animatethis( $('#fish1Id') , 'fish1.png ' , 'fish1-2.png' ); 
 animatethis( $('#fish2Id') , 'fish2.png ' , 'fish2-2.png' );
 
-
+// Red Fish ( Angry Fish )
 $('#fish1Id').dblclick(function() 
                        {   
     $('#fish1Id').stop(true);
@@ -32,16 +36,18 @@ $('#fish1Id').dblclick(function()
     animatethis( $('#fish1Id') , 'fish1.png ' , 'fish1-2.png' ); 
 }) ;
 
+// Red Fish ( Bull Fish )
 $(window).click(function()
                 { 
     $('#fish1Id').stop(true);
     var ML = event.pageX - 125;
     var MT = event.pageY - 125;
 
-    $("#fish1Id").animate({ top: MT, left: ML},2000,'swing');
+    $("#fish1Id").animate({ top: MT, left: ML},1000,'swing');
     animatethis( $('#fish1Id') , 'fish1.png ' , 'fish1-2.png' ); 
 } );
 
+// Blue Fish (Avoid cursor)
 $('#fish2Id').mouseenter(function() 
                          {     
     $("#fish2Id").stop(true);
