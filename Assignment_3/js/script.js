@@ -15,7 +15,7 @@ function animatethis(targetElement,img,img2) {
     }
     //Fish move speed
     var distance = Math.sqrt(Math.abs(position.left - movementX)^2+Math.abs(position.top - movementY)^2)
-    var duration = distance / 0.01;
+    var duration = distance / 0.005;
 
     $(targetElement).animate({left:movementX,top:movementY},duration);
 
